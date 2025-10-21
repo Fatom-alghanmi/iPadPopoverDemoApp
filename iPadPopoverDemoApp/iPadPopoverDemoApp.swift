@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct iPadPopoverDemoAppApp: App {
+struct iPadPopoverDemoApp: App {
+    @StateObject private var settings = SettingsStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(settings)
         }
     }
 }
